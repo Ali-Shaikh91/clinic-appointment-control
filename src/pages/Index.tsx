@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Calendar, Users, Package, Phone, MapPin, Clock, Heart, Settings } from "lucide-react";
+import { Calendar, Users, Package, Phone, MapPin, Clock, Heart, Settings, Star, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -22,55 +22,77 @@ const Index = () => {
         return <SettingsComponent />;
       case "contact":
         return (
-          <div className="max-w-4xl mx-auto p-6">
-            <h2 className="text-4xl font-bold text-center mb-12 text-blue-800">{t('contact.title')}</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="hover:shadow-xl transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-xl">
-                    <MapPin className="h-6 w-6 text-blue-600" />
-                    {t('contact.address')}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-lg">
-                  <p>123 Healthcare Street</p>
-                  <p>Medical District</p>
-                  <p>City, State 12345</p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-xl transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-xl">
-                    <Phone className="h-6 w-6 text-blue-600" />
-                    {t('contact.contactInfo')}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-lg">
-                  <p>{t('contact.phone')}</p>
-                  <p>{t('contact.emergency')}</p>
-                  <p>{t('contact.email')}</p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-xl transition-shadow duration-300 md:col-span-2">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-xl">
-                    <Clock className="h-6 w-6 text-blue-600" />
-                    {t('contact.hours')}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-lg">
-                  <div className="grid md:grid-cols-3 gap-4">
-                    <div>
-                      <p className="font-semibold">{t('contact.mondayFriday')}</p>
-                      <p>{t('contact.mondayFridayTime')}</p>
+          <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5 py-16">
+            <div className="max-w-4xl mx-auto p-6">
+              <div className="text-center mb-16">
+                <div className="inline-block p-4 bg-gradient-to-r from-primary to-accent rounded-full mb-6">
+                  <Phone className="h-12 w-12 text-white" />
+                </div>
+                <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  {t('contact.title')}
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  हमसे जुड़ें और बेहतर स्वास्थ्य सेवा का अनुभव करें
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                <Card className="glass-effect border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 group">
+                  <CardHeader className="text-center pb-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <MapPin className="h-8 w-8 text-white" />
                     </div>
-                    <div>
-                      <p className="font-semibold">{t('contact.saturday')}</p>
-                      <p>{t('contact.saturdayTime')}</p>
+                    <CardTitle className="text-2xl text-primary">{t('contact.address')}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center text-lg space-y-2">
+                    <p className="font-semibold">राज मेडिकल सेंटर</p>
+                    <p>123 हेल्थकेयर स्ट्रीट</p>
+                    <p>मेडिकल डिस्ट्रिक्ट, मुंबई</p>
+                    <p>पिन कोड: 400001</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-effect border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 group">
+                  <CardHeader className="text-center pb-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <Phone className="h-8 w-8 text-white" />
                     </div>
-                    <div>
-                      <p className="font-semibold">{t('contact.sunday')}</p>
-                      <p>{t('contact.sundayTime')}</p>
+                    <CardTitle className="text-2xl text-primary">{t('contact.contactInfo')}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center text-lg space-y-3">
+                    <div className="bg-primary/10 rounded-lg p-3">
+                      <p className="font-semibold text-primary">{t('contact.phone')}</p>
+                    </div>
+                    <div className="bg-red-50 rounded-lg p-3">
+                      <p className="font-semibold text-red-600">{t('contact.emergency')}</p>
+                    </div>
+                    <div className="bg-accent/10 rounded-lg p-3">
+                      <p className="font-semibold text-accent">{t('contact.email')}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <Card className="glass-effect border-0 shadow-2xl">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Clock className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-2xl text-primary">{t('contact.hours')}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl">
+                      <p className="font-bold text-lg text-primary mb-2">{t('contact.mondayFriday')}</p>
+                      <p className="text-lg font-semibold text-gray-700">{t('contact.mondayFridayTime')}</p>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
+                      <p className="font-bold text-lg text-primary mb-2">{t('contact.saturday')}</p>
+                      <p className="text-lg font-semibold text-gray-700">{t('contact.saturdayTime')}</p>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-red-50 to-orange-50 rounded-xl">
+                      <p className="font-bold text-lg text-primary mb-2">{t('contact.sunday')}</p>
+                      <p className="text-lg font-semibold text-gray-700">{t('contact.sundayTime')}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -80,85 +102,108 @@ const Index = () => {
         );
       default:
         return (
-          <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-            {/* Hero Section */}
-            <section className="py-24 px-4">
-              <div className="max-w-6xl mx-auto text-center">
-                <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center shadow-lg">
-                    <Heart className="h-8 w-8 text-white" />
+          <div className="min-h-screen">
+            {/* Hero Section with Enhanced Design */}
+            <section className="relative py-32 px-4 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366f1" fill-opacity="0.05"%3E%3Cpath d="m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+              
+              <div className="max-w-6xl mx-auto text-center relative z-10">
+                <div className="inline-block mb-8 animate-pulse">
+                  <div className="w-20 h-20 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center shadow-2xl">
+                    <Heart className="h-10 w-10 text-white" />
                   </div>
                 </div>
-                <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-800 to-green-700 bg-clip-text text-transparent mb-6">
+                
+                <h1 className="text-7xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-fade-in">
                   {t('home.title')}
                 </h1>
-                <p className="text-2xl text-gray-600 mb-4">
+                
+                <p className="text-3xl text-muted-foreground mb-4 font-medium">
                   {t('home.subtitle')}
                 </p>
-                <p className="text-xl text-gray-500 mb-12 max-w-4xl mx-auto">
+                
+                <p className="text-xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
                   {t('home.description')}
                 </p>
+                
                 <div className="flex flex-wrap justify-center gap-6">
                   <Button 
                     onClick={() => setActiveTab("appointments")}
-                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                    className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-12 py-6 text-xl rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                   >
-                    <Calendar className="mr-2 h-5 w-5" />
+                    <Calendar className="mr-3 h-6 w-6" />
                     {t('home.bookAppointment')}
                   </Button>
+                  
                   <Button 
                     variant="outline" 
                     onClick={() => setActiveTab("contact")}
-                    className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-10 py-4 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                    className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-12 py-6 text-xl rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                   >
-                    <Phone className="mr-2 h-5 w-5" />
+                    <Phone className="mr-3 h-6 w-6" />
                     {t('home.contactUs')}
                   </Button>
                 </div>
               </div>
             </section>
 
-            {/* Services Section */}
-            <section className="py-20 px-4 bg-white">
+            {/* Services Section with Modern Cards */}
+            <section className="py-24 px-4 bg-gradient-to-r from-primary/5 to-accent/5">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl font-bold text-center mb-4 text-blue-800">{t('home.services')}</h2>
-                <p className="text-xl text-center text-gray-600 mb-16">{t('home.servicesSubtitle')}</p>
-                <div className="grid md:grid-cols-3 gap-10">
-                  <Card className="text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-0 shadow-lg">
-                    <CardHeader className="pb-4">
-                      <div className="w-20 h-20 bg-gradient-to-r from-blue-100 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Users className="h-10 w-10 text-blue-600" />
+                <div className="text-center mb-20">
+                  <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    {t('home.services')}
+                  </h2>
+                  <p className="text-2xl text-muted-foreground max-w-3xl mx-auto">
+                    {t('home.servicesSubtitle')}
+                  </p>
+                </div>
+                
+                <div className="grid md:grid-cols-3 gap-8">
+                  <Card className="group hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border-0 glass-effect">
+                    <CardHeader className="text-center pb-6">
+                      <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-6 transition-transform duration-300 shadow-xl">
+                        <Users className="h-12 w-12 text-white" />
                       </div>
-                      <CardTitle className="text-2xl text-blue-800">{t('home.generalMedicine')}</CardTitle>
+                      <CardTitle className="text-2xl text-primary group-hover:text-accent transition-colors duration-300">
+                        {t('home.generalMedicine')}
+                      </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-lg text-gray-600">
+                    <CardContent className="text-center">
+                      <CardDescription className="text-lg text-muted-foreground leading-relaxed">
                         {t('home.generalMedicineDesc')}
                       </CardDescription>
                     </CardContent>
                   </Card>
-                  <Card className="text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-0 shadow-lg">
-                    <CardHeader className="pb-4">
-                      <div className="w-20 h-20 bg-gradient-to-r from-green-100 to-green-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Calendar className="h-10 w-10 text-green-600" />
+
+                  <Card className="group hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border-0 glass-effect">
+                    <CardHeader className="text-center pb-6">
+                      <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-6 transition-transform duration-300 shadow-xl">
+                        <Calendar className="h-12 w-12 text-white" />
                       </div>
-                      <CardTitle className="text-2xl text-blue-800">{t('home.specialistConsultation')}</CardTitle>
+                      <CardTitle className="text-2xl text-primary group-hover:text-accent transition-colors duration-300">
+                        {t('home.specialistConsultation')}
+                      </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-lg text-gray-600">
+                    <CardContent className="text-center">
+                      <CardDescription className="text-lg text-muted-foreground leading-relaxed">
                         {t('home.specialistConsultationDesc')}
                       </CardDescription>
                     </CardContent>
                   </Card>
-                  <Card className="text-center hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-0 shadow-lg">
-                    <CardHeader className="pb-4">
-                      <div className="w-20 h-20 bg-gradient-to-r from-purple-100 to-purple-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Package className="h-10 w-10 text-purple-600" />
+
+                  <Card className="group hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border-0 glass-effect">
+                    <CardHeader className="text-center pb-6">
+                      <div className="w-24 h-24 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-6 transition-transform duration-300 shadow-xl">
+                        <Package className="h-12 w-12 text-white" />
                       </div>
-                      <CardTitle className="text-2xl text-blue-800">{t('home.diagnosticServices')}</CardTitle>
+                      <CardTitle className="text-2xl text-primary group-hover:text-accent transition-colors duration-300">
+                        {t('home.diagnosticServices')}
+                      </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-lg text-gray-600">
+                    <CardContent className="text-center">
+                      <CardDescription className="text-lg text-muted-foreground leading-relaxed">
                         {t('home.diagnosticServicesDesc')}
                       </CardDescription>
                     </CardContent>
@@ -167,23 +212,64 @@ const Index = () => {
               </div>
             </section>
 
-            {/* Why Choose Us Section */}
-            <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50">
+            {/* Why Choose Us Section with Enhanced Features */}
+            <section className="py-24 px-4 bg-gradient-to-br from-accent/5 via-background to-primary/5">
               <div className="max-w-6xl mx-auto text-center">
-                <h2 className="text-4xl font-bold mb-4 text-blue-800">{t('home.whyChooseUs')}</h2>
-                <p className="text-xl text-gray-600 mb-16">{t('home.whyChooseUsDesc')}</p>
+                <div className="mb-20">
+                  <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                    {t('home.whyChooseUs')}
+                  </h2>
+                  <p className="text-2xl text-muted-foreground max-w-3xl mx-auto">
+                    {t('home.whyChooseUsDesc')}
+                  </p>
+                </div>
+                
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {[
-                    { title: t('home.experiencedDoctors'), desc: t('home.experiencedDoctorsDesc') },
-                    { title: t('home.modernEquipment'), desc: t('home.modernEquipmentDesc') },
-                    { title: t('home.24x7Service'), desc: t('home.24x7ServiceDesc') },
-                    { title: t('home.affordableRates'), desc: t('home.affordableRatesDesc') }
-                  ].map((item, index) => (
-                    <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                      <h3 className="text-xl font-semibold text-blue-800 mb-3">{item.title}</h3>
-                      <p className="text-gray-600">{item.desc}</p>
-                    </div>
-                  ))}
+                    { 
+                      title: t('home.experiencedDoctors'), 
+                      desc: t('home.experiencedDoctorsDesc'),
+                      icon: Award,
+                      gradient: "from-blue-500 to-indigo-600"
+                    },
+                    { 
+                      title: t('home.modernEquipment'), 
+                      desc: t('home.modernEquipmentDesc'),
+                      icon: Settings,
+                      gradient: "from-purple-500 to-pink-600"
+                    },
+                    { 
+                      title: t('home.24x7Service'), 
+                      desc: t('home.24x7ServiceDesc'),
+                      icon: Shield,
+                      gradient: "from-green-500 to-emerald-600"
+                    },
+                    { 
+                      title: t('home.affordableRates'), 
+                      desc: t('home.affordableRatesDesc'),
+                      icon: Star,
+                      gradient: "from-orange-500 to-red-600"
+                    }
+                  ].map((item, index) => {
+                    const IconComponent = item.icon;
+                    return (
+                      <div key={index} className="group">
+                        <Card className="h-full bg-card/60 backdrop-blur border-0 shadow-xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+                          <CardContent className="p-8 text-center">
+                            <div className={`w-20 h-20 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300 shadow-xl`}>
+                              <IconComponent className="h-10 w-10 text-white" />
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-accent transition-colors duration-300">
+                              {item.title}
+                            </h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                              {item.desc}
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </section>
@@ -193,21 +279,24 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
-      <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <div className="min-h-screen bg-background">
+      {/* Enhanced Navigation */}
+      <nav className="bg-card/80 backdrop-blur-md shadow-xl sticky top-0 z-50 border-b">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center shadow-lg">
-                <Heart className="text-white font-bold h-6 w-6" />
+            <div className="flex items-center space-x-4">
+              <div className="w-14 h-14 bg-gradient-to-r from-primary to-accent rounded-2xl flex items-center justify-center shadow-lg">
+                <Heart className="text-white font-bold h-8 w-8" />
               </div>
               <div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-blue-800 to-green-700 bg-clip-text text-transparent">{t('home.title')}</span>
-                <p className="text-sm text-gray-500">{t('home.subtitle')}</p>
+                <span className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  {t('home.title')}
+                </span>
+                <p className="text-sm text-muted-foreground">{t('home.subtitle')}</p>
               </div>
             </div>
-            <div className="hidden md:flex space-x-8">
+            
+            <div className="hidden md:flex space-x-2">
               {[
                 { key: "home", label: t('nav.home') },
                 { key: "appointments", label: t('nav.appointments') },
@@ -218,21 +307,22 @@ const Index = () => {
                 <button
                   key={item.key}
                   onClick={() => setActiveTab(item.key)}
-                  className={`font-medium transition-all duration-300 px-4 py-2 rounded-full ${
+                  className={`font-medium transition-all duration-300 px-6 py-3 rounded-xl ${
                     activeTab === item.key
-                      ? "text-white bg-gradient-to-r from-blue-600 to-blue-700 shadow-md"
-                      : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
+                      ? "text-white bg-gradient-to-r from-primary to-accent shadow-lg transform scale-105"
+                      : "text-muted-foreground hover:text-primary hover:bg-primary/10"
                   }`}
                 >
                   {item.label}
                 </button>
               ))}
             </div>
+            
             <div className="md:hidden">
               <select
                 value={activeTab}
                 onChange={(e) => setActiveTab(e.target.value)}
-                className="border-2 border-blue-200 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none"
+                className="border-2 border-primary/20 rounded-xl px-4 py-2 focus:border-primary focus:outline-none bg-card"
               >
                 <option value="home">{t('nav.home')}</option>
                 <option value="appointments">{t('nav.appointments')}</option>
