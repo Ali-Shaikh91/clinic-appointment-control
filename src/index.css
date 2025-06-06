@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --background: 252 252 254;
+    --background: 255 255 255;
     --foreground: 15 23 42;
 
     --card: 255 255 255;
@@ -16,16 +16,16 @@
     --popover: 255 255 255;
     --popover-foreground: 15 23 42;
 
-    --primary: 99 102 241;
+    --primary: 59 130 246;
     --primary-foreground: 255 255 255;
 
-    --secondary: 241 245 249;
+    --secondary: 248 250 252;
     --secondary-foreground: 51 65 85;
 
     --muted: 248 250 252;
     --muted-foreground: 100 116 139;
 
-    --accent: 236 72 153;
+    --accent: 16 185 129;
     --accent-foreground: 255 255 255;
 
     --destructive: 239 68 68;
@@ -33,22 +33,22 @@
 
     --border: 226 232 240;
     --input: 226 232 240;
-    --ring: 99 102 241;
+    --ring: 59 130 246;
 
     --radius: 0.75rem;
 
     --sidebar-background: 248 250 252;
     --sidebar-foreground: 51 65 85;
-    --sidebar-primary: 99 102 241;
+    --sidebar-primary: 59 130 246;
     --sidebar-primary-foreground: 255 255 255;
     --sidebar-accent: 241 245 249;
     --sidebar-accent-foreground: 51 65 85;
     --sidebar-border: 226 232 240;
-    --sidebar-ring: 99 102 241;
+    --sidebar-ring: 59 130 246;
   }
 
   .dark {
-    --background: 2 6 23;
+    --background: 2 8 23;
     --foreground: 248 250 252;
 
     --card: 15 23 42;
@@ -57,8 +57,8 @@
     --popover: 15 23 42;
     --popover-foreground: 248 250 252;
 
-    --primary: 129 140 248;
-    --primary-foreground: 15 23 42;
+    --primary: 59 130 246;
+    --primary-foreground: 255 255 255;
 
     --secondary: 30 41 59;
     --secondary-foreground: 226 232 240;
@@ -66,24 +66,24 @@
     --muted: 30 41 59;
     --muted-foreground: 148 163 184;
 
-    --accent: 219 39 119;
-    --accent-foreground: 248 250 252;
+    --accent: 16 185 129;
+    --accent-foreground: 255 255 255;
 
     --destructive: 220 38 38;
     --destructive-foreground: 248 250 252;
 
     --border: 30 41 59;
     --input: 30 41 59;
-    --ring: 129 140 248;
+    --ring: 59 130 246;
     
     --sidebar-background: 15 23 42;
     --sidebar-foreground: 226 232 240;
-    --sidebar-primary: 129 140 248;
-    --sidebar-primary-foreground: 15 23 42;
+    --sidebar-primary: 59 130 246;
+    --sidebar-primary-foreground: 255 255 255;
     --sidebar-accent: 30 41 59;
     --sidebar-accent-foreground: 226 232 240;
     --sidebar-border: 30 41 59;
-    --sidebar-ring: 129 140 248;
+    --sidebar-ring: 59 130 246;
   }
 }
 
@@ -97,27 +97,106 @@
   }
 }
 
-/* Custom gradient backgrounds */
+/* Professional gradient backgrounds */
 .gradient-bg-1 {
-  background: linear-gradient(135deg, rgb(99 102 241) 0%, rgb(236 72 153) 100%);
+  background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(16 185 129) 100%);
 }
 
 .gradient-bg-2 {
-  background: linear-gradient(135deg, rgb(168 85 247) 0%, rgb(236 72 153) 100%);
+  background: linear-gradient(135deg, rgb(99 102 241) 0%, rgb(59 130 246) 100%);
 }
 
 .gradient-bg-3 {
-  background: linear-gradient(135deg, rgb(34 197 94) 0%, rgb(59 130 246) 100%);
+  background: linear-gradient(135deg, rgb(16 185 129) 0%, rgb(6 182 212) 100%);
 }
 
-/* Glass morphism effect */
+.gradient-bg-4 {
+  background: linear-gradient(135deg, rgb(147 51 234) 0%, rgb(79 70 229) 100%);
+}
+
+/* Glass morphism effect with professional styling */
 .glass-effect {
-  backdrop-filter: blur(16px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
 }
 
 .dark .glass-effect {
-  background: rgba(15, 23, 42, 0.3);
+  background: rgba(15, 23, 42, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+/* Professional card hover effects */
+.professional-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.professional-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.dark .professional-card {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.7));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.dark .professional-card:hover {
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.25);
+}
+
+/* Professional button styles */
+.btn-professional {
+  background: linear-gradient(135deg, rgb(59 130 246), rgb(37 99 235));
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+}
+
+.btn-professional:hover {
+  background: linear-gradient(135deg, rgb(37 99 235), rgb(29 78 216));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, rgb(16 185 129), rgb(5 150 105));
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, rgb(5 150 105), rgb(4 120 87));
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+}
+
+/* Professional animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Pattern background */
+.bg-pattern {
+  background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.15) 1px, transparent 0);
+  background-size: 40px 40px;
 }
