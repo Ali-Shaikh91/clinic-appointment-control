@@ -103,10 +103,9 @@ const Index = () => {
       default:
         return (
           <div className="min-h-screen">
-            {/* Hero Section with Enhanced Design */}
             <section className="relative py-32 px-4 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366f1" fill-opacity="0.05"%3E%3Cpath d="m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+              <div className="absolute inset-0 bg-pattern opacity-30"></div>
               
               <div className="max-w-6xl mx-auto text-center relative z-10">
                 <div className="inline-block mb-8 animate-pulse">
@@ -148,7 +147,6 @@ const Index = () => {
               </div>
             </section>
 
-            {/* Services Section with Modern Cards */}
             <section className="py-24 px-4 bg-gradient-to-r from-primary/5 to-accent/5">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-20">
@@ -212,7 +210,6 @@ const Index = () => {
               </div>
             </section>
 
-            {/* Why Choose Us Section with Enhanced Features */}
             <section className="py-24 px-4 bg-gradient-to-br from-accent/5 via-background to-primary/5">
               <div className="max-w-6xl mx-auto text-center">
                 <div className="mb-20">
@@ -280,7 +277,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Enhanced Navigation */}
       <nav className="bg-card/80 backdrop-blur-md shadow-xl sticky top-0 z-50 border-b">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
@@ -335,7 +331,6 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Main Content */}
       {renderContent()}
     </div>
   );
